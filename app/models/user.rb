@@ -5,7 +5,7 @@ class User < ApplicationRecord
   belongs_to :state
   has_one :representative_seat
   has_many :senator_seats
-
+# get district should be in a service object.
   def get_district
   	scraper = Mechanize.new
   	scraper.history_added = Proc.new { sleep 0.5}
